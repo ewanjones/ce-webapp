@@ -5,9 +5,23 @@ import { Sidebar } from "@/components/ui/sidebar"
 import { BatteryInfo } from "@/components/ui/battery-info"
 import { ChargeLevelChart } from "@/components/ui/charge-level-chart"
 
+
+type BatteryData = {
+  [key: string]: {
+    chargeLevel: number;
+    health: number;
+    lastCharged: string;
+  };
+};
+
+type ChargeLevelEntry = {
+  time: string;
+  level: number;
+};
+
 // Mock data for demonstration
 const batteries = ["BAT001", "BAT002", "BAT003", "BAT004", "BAT005"]
-const batteryData = {
+const batteryData: BatteryData = {
   "BAT001": { chargeLevel: 85, health: 98, lastCharged: "2023-05-15 14:30" },
   "BAT002": { chargeLevel: 72, health: 95, lastCharged: "2023-05-14 09:15" },
   "BAT003": { chargeLevel: 93, health: 99, lastCharged: "2023-05-15 18:45" },
@@ -15,7 +29,7 @@ const batteryData = {
   "BAT005": { chargeLevel: 88, health: 97, lastCharged: "2023-05-15 11:20" },
 }
 
-const chargeLevelData = [
+const chargeLevelData: ChargeLevelEntry[] = [
   { time: "00:00", level: 60 },
   { time: "04:00", level: 40 },
   { time: "08:00", level: 30 },
