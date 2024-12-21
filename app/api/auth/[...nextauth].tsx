@@ -38,5 +38,19 @@ export const authOptions = {
     }
     })
   ],
+  callbacks: {
+    async jwt({ token, account }) {
+      // Persist the OAuth access token to the token object
+      if (account) {
+        token.accessToken = account.access_token;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      // Attach the access token to the session object
+      session.accessToken = token.accessToken;
+      return session;
+    },
+  },
 }
 export default NextAuth(authOptions)
