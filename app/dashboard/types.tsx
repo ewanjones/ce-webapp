@@ -6,7 +6,7 @@ export type Event = {
 
 export type Asset = {
   serial_number: string;
-  capacity: number;
+  capacity_kwh: number;
   current: number;
   voltage: number;
   events: Event[]

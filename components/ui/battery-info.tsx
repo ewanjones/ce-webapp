@@ -3,11 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 interface BatteryInfoProps {
   serialNumber: string;
   chargeLevel?: number;
-  health: number;
+  current: number;
+  voltage: number;
+  capacity: number;
   lastCharged?: Date;
 }
 
-export function BatteryInfo({ serialNumber, chargeLevel, health, lastCharged }: BatteryInfoProps) {
+export function BatteryInfo({ serialNumber, chargeLevel, voltage, current, capacity, lastCharged }: BatteryInfoProps) {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       <Card>
@@ -20,18 +22,20 @@ export function BatteryInfo({ serialNumber, chargeLevel, health, lastCharged }: 
       </Card>
       <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-          <CardTitle className="text-sm font-medium">Current Charge</CardTitle>
+          <CardTitle className="text-sm font-medium">Battery Specs</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">{chargeLevel}%</div>
+          <div className="text-m font-bold">Voltage: {voltage}V</div>
+          <div className="text-m font-bold">Current: {current}A</div>
+          <div className="text-m font-bold">Capacity: {capacity}kWh</div>
         </CardContent>
       </Card>
       <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-          <CardTitle className="text-sm font-medium">Battery Health</CardTitle>
+          <CardTitle className="text-sm font-medium">Current Charge</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">{health}%</div>
+          <div className="text-2xl font-bold">{chargeLevel}%</div>
         </CardContent>
       </Card>
       <Card>
