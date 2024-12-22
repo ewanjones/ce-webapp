@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Capture Energy",
+  title: "Example",
   description: "A battery-backed energy supplier",
 };
 
@@ -41,7 +41,7 @@ export default function RootLayout({
 
           <NavigationMenu className="NavigationMenuRoot">
             <Image 
-              src="capture-logo.svg"
+              src="c-logo.svg"
               width={100}
               height={300}
               alt="Picture of the author"

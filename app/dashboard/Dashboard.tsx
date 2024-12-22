@@ -51,7 +51,9 @@ export default function DashboardPage(props: Props ) {
         <BatteryInfo
           serialNumber={selectedBattery.serial_number}
           chargeLevel={lastEvent?.charge_percent}
-          health={100}
+          voltage={selectedBattery.voltage}
+          current={selectedBattery.current}
+          capacity={selectedBattery.capacity_kwh}
           lastCharged={lastEvent?.occurred_at}
         />
         <div className="mt-6">
