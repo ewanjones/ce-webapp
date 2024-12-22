@@ -2,9 +2,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface BatteryInfoProps {
   serialNumber: string;
-  chargeLevel: number;
+  chargeLevel?: number;
   health: number;
-  lastCharged: string;
+  lastCharged?: Date;
 }
 
 export function BatteryInfo({ serialNumber, chargeLevel, health, lastCharged }: BatteryInfoProps) {
@@ -39,7 +39,7 @@ export function BatteryInfo({ serialNumber, chargeLevel, health, lastCharged }: 
           <CardTitle className="text-sm font-medium">Last Charged</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">{lastCharged}</div>
+          <div className="text-2xl font-bold">{lastCharged?.toString()}</div>
         </CardContent>
       </Card>
     </div>
