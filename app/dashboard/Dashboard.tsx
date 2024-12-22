@@ -36,8 +36,6 @@ export default function DashboardPage(props: Props ) {
   // const lastEvent = (selectedBattery.events) ? selectedBattery.events[-1] : null
   const lastEvent = selectedBattery.events[selectedBattery.events.length - 1]
 
-
-
   return (
     <div className="flex h-screen">
       <Sidebar
